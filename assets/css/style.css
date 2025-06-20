@@ -176,3 +176,60 @@ main {
     justify-content: center;
   }
 }
+
+
+.faq-section {
+  background-color: #34699a;    /* Deep blue background */
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+.faq-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+}
+.faq-decor {
+  width: 50px;   /* adjust as needed */
+  height: auto;
+}
+.faq-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.faq-card {
+  background-color: #f7d7e1;  /* soft pink */
+  border-radius: 12px;
+  width: 280px;
+  padding: 20px;
+  text-align: left;
+  color: #333;
+}
+.faq-card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.faq-card img {
+  display: block;
+  margin: 0 auto 15px;
+  width: 60px;   /* icon size */
+}
+.faq-card p {
+  line-height: 1.4;
+  font-size: 0.95rem;
+}
+@media (max-width: 800px) {
+  .faq-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
