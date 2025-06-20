@@ -1,32 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-/* Basic resets and typography */
-body {
+/* Ensure full-height layout and flex for footer positioning */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
-  background-color: #f5f5ef; /* Light neutral background (natural parchment tone) */
+  background-color: #f5f5ef; /* Light neutral background */
   color: #333;
 }
+main {
+  flex: 1;
+}
+
+/* Header: flex layout for vertical centering of nav */
 .site-header {
-  background-color: #88a07a; /* Soft green header to evoke nature */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #88a07a; /* Soft green header */
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .site-header .site-title {
-  display: inline-block;
   margin: 0;
-  font-family: 'Dancing Script', cursive; /* Romantic cursive for the couple's name */
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8em;
 }
 .navbar ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: inline-block;
-  float: right;
-}
-.navbar li {
-  display: inline;
-  margin: 0 10px;
+  display: flex;
+  gap: 15px;
 }
 .navbar a {
   color: white;
@@ -41,7 +51,7 @@ body {
 .welcome-section {
   text-align: center;
   padding: 40px 20px;
-  background-color: #dce8d5; /* Pale green background for contrast */
+  background-color: #dce8d5; /* Pale green background */
 }
 .welcome-section h2 {
   font-family: 'Dancing Script', cursive;
@@ -54,7 +64,6 @@ body {
 }
 #countdown-timer {
   font-family: monospace;
-  /* The spans (#days, #hours, etc.) will be updated via JS */
 }
 
 /* Placeholder image styling */
@@ -64,7 +73,6 @@ body {
   max-width: 300px;
   border: 2px dashed #88a07a;
   padding: 10px;
-  /* This dashed box can hold a future illustration or photo */
 }
 
 /* Program Schedule */
@@ -91,13 +99,15 @@ body {
   font-weight: bold;
 }
 .reserve-form {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 .reserve-form input[type="text"] {
   width: 150px;
+  padding: 4px;
 }
 .reserve-form button {
-  margin-left: 5px;
   background-color: #88a07a;
   color: white;
   border: none;
@@ -132,7 +142,8 @@ body {
   max-width: 600px;
   height: 450px;
   border: 0;
-  margin: 20px 0;
+  margin: 20px auto;
+  display: block;
 }
 
 /* Footer */
@@ -141,28 +152,23 @@ body {
   color: white;
   text-align: center;
   padding: 10px;
-  margin-top: 40px;
 }
 
 /* Responsive Styles */
 @media (max-width: 600px) {
   .navbar ul {
-    display: block;
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-  .navbar li {
-    display: block;
-    margin: 5px 0;
-  }
-  /* Stack gift list items on small screens */
   .gift-list li {
     flex-direction: column;
     align-items: flex-start;
   }
   .reserve-form {
-    margin-top: 5px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  /* Center gallery images on small screens */
   .gallery {
     justify-content: center;
   }
