@@ -24,7 +24,7 @@ main {
   justify-content: space-between;
   background-color: #88a07a; /* Soft green header */
   color: white;
-  padding: 10px 20px;
+  padding: 20px;
 }
 .site-header .site-title {
   margin: 0;
