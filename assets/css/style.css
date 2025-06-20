@@ -15,6 +15,9 @@ body {
 }
 main {
   flex: 1;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 900px; /* Centered content with max width */
 }
 
 /* Header: flex layout for vertical centering of nav */
