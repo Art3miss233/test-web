@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Basic resets and typography */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5ef; /* Light neutral background (natural parchment tone) */
+  color: #333;
+}
+.site-header {
+  background-color: #88a07a; /* Soft green header to evoke nature */
+  color: white;
+  padding: 10px;
+}
+.site-header .site-title {
+  display: inline-block;
+  margin: 0;
+  font-family: 'Dancing Script', cursive; /* Romantic cursive for the couple's name */
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+}
+.navbar li {
+  display: inline;
+  margin: 0 10px;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Welcome section on Home */
+.welcome-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #dce8d5; /* Pale green background for contrast */
+}
+.welcome-section h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.countdown {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+#countdown-timer {
+  font-family: monospace;
+  /* The spans (#days, #hours, etc.) will be updated via JS */
+}
+
+/* Placeholder image styling */
+.placeholder-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
+  border: 2px dashed #88a07a;
+  padding: 10px;
+  /* This dashed box can hold a future illustration or photo */
+}
+
+/* Program Schedule */
+.schedule {
+  list-style: none;
+  padding: 0 20px;
+}
+.schedule li {
+  margin: 10px 0;
+}
+
+/* Gift List styles */
+.gift-list {
+  list-style: none;
+  padding: 0 20px;
+}
+.gift-list li {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.gift-list span {
+  font-weight: bold;
+}
+.reserve-form {
+  display: inline-block;
+}
+.reserve-form input[type="text"] {
+  width: 150px;
+}
+.reserve-form button {
+  margin-left: 5px;
+  background-color: #88a07a;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.reserve-form button:hover {
+  background-color: #6f8862;
+}
+
+/* Photo Gallery grid */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+}
+.gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  cursor: pointer;
+}
+.gallery img:hover {
+  opacity: 0.8;
+}
+
+/* Map iframe */
+.map {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  border: 0;
+  margin: 20px 0;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #88a07a;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .navbar ul {
+    display: block;
+    text-align: center;
+  }
+  .navbar li {
+    display: block;
+    margin: 5px 0;
+  }
+  /* Stack gift list items on small screens */
+  .gift-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .reserve-form {
+    margin-top: 5px;
+  }
+  /* Center gallery images on small screens */
+  .gallery {
+    justify-content: center;
+  }
+}

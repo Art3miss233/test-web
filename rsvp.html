@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RSVP - Emilia &amp; Kristian's Wedding</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">Emilia & Kristian</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="gifts.html">Gift List</a></li>
+        <li><a href="photos.html">Photo Gallery</a></li>
+        <li><a href="travel.html">Travel &amp; Stay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>RSVP</h2>
+    <p>Please let us know if you can make it to our big day! Kindly respond by [RSVP deadline].</p>
+    <form id="rsvp-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <label>
+        Your Name:<br />
+        <input type="text" name="name" required />
+      </label><br /><br />
+      <label>
+        Will you attend?<br />
+        <select name="attendance" required>
+          <option value="">-- Select an option --</option>
+          <option value="Yes">Yes, can't wait!</option>
+          <option value="No">Sorry, can't make it</option>
+        </select>
+      </label><br /><br />
+      <label>
+        Telephone number:<br />
+        <input type="tel" name="phone" />
+      </label><br /><br />
+      <label>
+        Any food allergies or dietary restrictions?<br />
+        <textarea name="allergies" placeholder="Let us know if you have any dietary needs"></textarea>
+      </label><br /><br />
+      <label>
+        Song request (for the dance floor):<br />
+        <input type="text" name="song" placeholder="Suggest a track to dance to!" />
+      </label><br /><br />
+      <!-- You can include a hidden field for email subject or other metadata if your form service supports it -->
+      <button type="submit">Send RSVP</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Emilia &amp; Kristian</p>
+  </footer>
+</body>
+</html>

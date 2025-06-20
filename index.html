@@ -1,107 +1,54 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emilia & Kristian - Vårt Bryllup</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #FFEDE7, #DCEFFF);
-      color: #333;
-    }
-    a {
-      text-decoration: none;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 2rem;
-    }
-    header h1 {
-      font-family: 'Amatic SC', cursive;
-      font-size: 3rem;
-      color: #FF7F7F;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      height: 300px;
-      background: url('path/to/chibi-natur.png') no-repeat center/contain;
-    }
-
-    /* Main Content */
-    .content {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: rgba(255,255,255,0.8);
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .content h2 {
-      font-family: 'Amatic SC', cursive;
-      font-size: 2rem;
-      margin-top: 0;
-      color: #FF7F7F;
-    }
-    .content p {
-      line-height: 1.6;
-    }
-
-    /* Button */
-    .btn {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #FFB7B2;
-      color: #fff;
-      border-radius: 50px;
-      font-weight: 600;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emilia & Kristian's Wedding</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Emilia &amp; Kari</h1>
-    <p>Vi gifter oss 13. juni 2026</p>
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <h1 class="site-title">Emilia & Kristian</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="gifts.html">Gift List</a></li>
+        <li><a href="photos.html">Photo Gallery</a></li>
+        <li><a href="travel.html">Travel &amp; Stay</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero"></section>
-
-  <section class="content">
-    <h2>Velkommen!</h2>
-    <p>Vi gleder oss til å feire dagen med dere. Her finner dere informasjon om sted, tid og hvordan dere kan svare på invitasjonen.</p>
-    <a href="#rsvp" class="btn">RSVP</a>
+  <!-- Welcome Section with Countdown -->
+  <section class="welcome-section">
+    <h2>Welcome to our wedding website!</h2>
+    <p>We're so excited to celebrate our special day with you. Find all the details here and don't forget to RSVP.</p>
+    <div class="countdown">
+      <h3>Time until we say "I do":</h3>
+      <div id="countdown-timer">
+        <span id="days">0</span> days 
+        <span id="hours">0</span> hours 
+        <span id="minutes">0</span> minutes 
+        <span id="seconds">0</span> seconds
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2026 Emilia &amp; Kristian</p>
+  <!-- Introductory Image/Illustration Placeholder -->
+  <section class="intro-pic">
+    <!-- Placeholder for a future drawing or photo -->
+    <img src="assets/images/placeholder.jpg" alt="Our Drawing Placeholder" class="placeholder-image" />
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Emilia &amp; Kristian</p>
   </footer>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

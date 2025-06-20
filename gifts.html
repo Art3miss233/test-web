@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gift Registry - Emilia &amp; Kristian</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-title">Emilia & Kristian</h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="program.html">Program</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+        <li><a href="gifts.html">Gift List</a></li>
+        <li><a href="photos.html">Photo Gallery</a></li>
+        <li><a href="travel.html">Travel &amp; Stay</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Gift List</h2>
+    <p>Your presence is the best gift of all! But if you'd like to honor us with a gift, here are some ideas. If you choose to reserve a gift, it will remain a surprise for us!</p>
+    <ul class="gift-list">
+      <li>
+        <span>🍳 Kitchen Mixer</span>
+        <form class="reserve-form" action="https://formspree.io/f/another-form-id" method="POST">
+          <input type="hidden" name="item" value="Kitchen Mixer" />
+          <label>Your Name: <input type="text" name="guestName" required /></label>
+          <button type="submit">Reserve</button>
+        </form>
+      </li>
+      <li>
+        <span>🏕️ Picnic Set</span>
+        <form class="reserve-form" action="https://formspree.io/f/another-form-id" method="POST">
+          <input type="hidden" name="item" value="Picnic Set" />
+          <label>Your Name: <input type="text" name="guestName" required /></label>
+          <button type="submit">Reserve</button>
+        </form>
+      </li>
+      <!-- Repeat similar <li> for each gift item, possibly with different emojis or icons for fun -->
+    </ul>
+    <p><em>Note: When you reserve an item, it gets recorded without revealing your name to Emilia &amp; Kristian. They will only see that the item is reserved, not who reserved it.</em></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Emilia &amp; Kristian</p>
+  </footer>
+</body>
+</html>
