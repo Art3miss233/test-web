@@ -159,15 +159,15 @@
   </footer>
 
   <script>
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwS5MsSUIuJ1L9iEOHjeeDyWnbAHySeNp7kvFL0Oa747r-0JM24f-GVFkgC3WQFmOgl/exec";
+    const scriptURL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
 
-    // Load guest list from Google Sheets via GET
     fetch(scriptURL + "?guestlist=true")
       .then(response => response.json())
       .then(names => {
         const dataList = document.getElementById('guestList');
         dataList.innerHTML = "";
-        names.forEach(name => {
+        names.forEach((name, index) => {
+          if (index === 0 && name.toLowerCase().includes("navn")) return; // skip header row
           const opt = document.createElement('option');
           opt.value = name;
           dataList.appendChild(opt);
@@ -175,21 +175,13 @@
       });
 
     document.getElementById("guestName").addEventListener("input", function () {
-      const input = this.value.trim();
-      const guestList = Array.from(document.getElementById('guestList').options);
-      const match = guestList.find(option => option.value.toLowerCase() === input.toLowerCase());
+      const input = this.value.trim().toLowerCase();
+      const options = Array.from(document.getElementById('guestList').options);
+      const match = options.find(opt => opt.value.toLowerCase() === input);
+      const guestInfo = document.getElementById("guest-info");
 
       if (match) {
         document.querySelector("input[name='confirmedGuest']").value = match.value;
-        guestInfo.style.display = "block";
-      } else {
-        guestInfo.style.display = "none";
-      }
-
-      const guestInfo = document.getElementById("guest-info");
-
-      if (matched) {
-        document.querySelector("input[name='confirmedGuest']").value = input;
         guestInfo.style.display = "block";
       } else {
         guestInfo.style.display = "none";
