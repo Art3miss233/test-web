@@ -5,6 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RSVP - Emilia &amp; Kristian's Wedding</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .rsvp-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #e7f2ec;
+      border-radius: 10px;
+    }
+    .guest-entry {
+      border-top: 1px solid #aaa;
+      margin-top: 20px;
+      padding-top: 10px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input[type="text"], input[type="tel"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .attendance-options {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+    .submit-btn {
+      margin-top: 20px;
+      background-color: #88a07a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .header-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,46 +60,85 @@
         <li><a href="photos.html">Photo Gallery</a></li>
         <li><a href="travel.html">Travel &amp; Stay</a></li>
         <li><a href="faq.html">FAQs</a></li>
-
       </ul>
     </nav>
   </header>
 
   <main>
-    <h2>RSVP</h2>
-    <p>Please let us know if you can make it to our big day! Kindly respond by [RSVP deadline].</p>
-    <form id="rsvp-form" action="https://formspree.io/f/your-form-id" method="POST">
-      <label>
-        Your Name:<br />
-        <input type="text" name="name" required />
-      </label><br /><br />
-      <label>
-        Will you attend?<br />
-        <select name="attendance" required>
-          <option value="">-- Select an option --</option>
-          <option value="Yes">Yes, can't wait!</option>
-          <option value="No">Sorry, can't make it</option>
-        </select>
-      </label><br /><br />
-      <label>
-        Telephone number:<br />
-        <input type="tel" name="phone" />
-      </label><br /><br />
-      <label>
-        Any food allergies or dietary restrictions?<br />
-        <textarea name="allergies" placeholder="Let us know if you have any dietary needs"></textarea>
-      </label><br /><br />
-      <label>
-        Song request (for the dance floor):<br />
-        <input type="text" name="song" placeholder="Suggest a track to dance to!" />
-      </label><br /><br />
-      <!-- You can include a hidden field for email subject or other metadata if your form service supports it -->
-      <button type="submit">Send RSVP</button>
-    </form>
+    <section class="rsvp-section">
+      <div class="header-info">
+        <p>1 event</p>
+        <h2>WEDDING</h2>
+        <p>Saturday, June 13, 2026<br/>Grytebakke gård, Norway</p>
+      </div>
+
+      <form id="rsvp-form">
+        <label for="search-name">Enter your name:</label>
+        <input type="text" id="search-name" name="search-name" placeholder="Start typing your name..." required />
+
+        <div id="guest-info" style="display: none">
+          <div class="guest-entry">
+            <label>Guest Name</label>
+            <input type="text" name="guest1-name" readonly />
+            <div class="attendance-options">
+              <label><input type="radio" name="guest1-attend" value="Yes"> Will Attend</label>
+              <label><input type="radio" name="guest1-attend" value="No"> Will Not Attend</label>
+            </div>
+            <label>Meal Preference</label>
+            <select name="guest1-meal">
+              <option value="">Select Meal Option...</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+            </select>
+          </div>
+
+          <!-- Plus one (optional) -->
+          <div class="guest-entry">
+            <label>Plus One Name (optional)</label>
+            <input type="text" name="guest2-name" />
+            <div class="attendance-options">
+              <label><input type="radio" name="guest2-attend" value="Yes"> Will Attend</label>
+              <label><input type="radio" name="guest2-attend" value="No"> Will Not Attend</label>
+            </div>
+            <label>Meal Preference</label>
+            <select name="guest2-meal">
+              <option value="">Select Meal Option...</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+            </select>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <label>Are there any dietary restrictions that we should know of? (Optional)</label>
+            <textarea name="restrictions" rows="3" maxlength="800"></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </div>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; 2025 Emilia &amp; Kristian</p>
   </footer>
+
+  <script>
+    const guestList = ["Sonja O'Brien", "Kristoffer Elstad Hansen"];
+
+    document.getElementById("search-name").addEventListener("input", function () {
+      const input = this.value.trim().toLowerCase();
+      const matchedName = guestList.find(name => name.toLowerCase().startsWith(input));
+
+      if (matchedName) {
+        document.querySelector("input[name='guest1-name']").value = matchedName;
+        document.getElementById("guest-info").style.display = "block";
+      } else {
+        document.getElementById("guest-info").style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
