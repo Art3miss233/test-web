@@ -5,6 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gift Registry - Emilia &amp; Kristian</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .gift-button {
+      display: inline-block;
+      padding: 0.75em 1.5em;
+      background-color: #d4af37; /* Gullfarget */
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .gift-button:hover {
+      background-color: #b8962d;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -18,34 +34,26 @@
         <li><a href="photos.html">Photo Gallery</a></li>
         <li><a href="travel.html">Travel &amp; Stay</a></li>
         <li><a href="faq.html">FAQs</a></li>
-
       </ul>
     </nav>
   </header>
 
   <main>
     <h2>Gift List</h2>
-    <p>Your presence is the best gift of all! But if you'd like to honor us with a gift, here are some ideas. If you choose to reserve a gift, it will remain a surprise for us!</p>
-    <ul class="gift-list">
-      <li>
-        <span>🍳 Kitchen Mixer</span>
-        <form class="reserve-form" action="https://formspree.io/f/another-form-id" method="POST">
-          <input type="hidden" name="item" value="Kitchen Mixer" />
-          <label>Your Name: <input type="text" name="guestName" required /></label>
-          <button type="submit">Reserve</button>
-        </form>
-      </li>
-      <li>
-        <span>🏕️ Picnic Set</span>
-        <form class="reserve-form" action="https://formspree.io/f/another-form-id" method="POST">
-          <input type="hidden" name="item" value="Picnic Set" />
-          <label>Your Name: <input type="text" name="guestName" required /></label>
-          <button type="submit">Reserve</button>
-        </form>
-      </li>
-      <!-- Repeat similar <li> for each gift item, possibly with different emojis or icons for fun -->
-    </ul>
-    <p><em>Note: When you reserve an item, it gets recorded without revealing your name to Emilia &amp; Kristian. They will only see that the item is reserved, not who reserved it.</em></p>
+    <p>Your presence is the best gift of all! But if you'd like to honor us with a gift, we've made a wishlist:</p>
+
+    <p>
+      <a
+        href="https://onskeskyen.no/nb/wishlists/knRiI1b8N5hEHdQM"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="gift-button"
+      >
+        View Our Gift List on Ønskeskyen
+      </a>
+    </p>
+
+    <p><em>Note: When you reserve an item on Ønskeskyen, it remains a surprise for us — we won’t see who picked what!</em></p>
   </main>
 
   <footer class="site-footer">

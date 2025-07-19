@@ -1,144 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSVP - Emilia &amp; Kristian's Wedding</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <style>
-    .rsvp-section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #e7f2ec;
-      border-radius: 10px;
-    }
-    .guest-entry {
-      border-top: 1px solid #aaa;
-      margin-top: 20px;
-      padding-top: 10px;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input[type="text"], input[type="tel"], select, textarea {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .attendance-options {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 10px;
-    }
-    .submit-btn {
-      margin-top: 20px;
-      background-color: #88a07a;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-    .header-info {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <h1 class="site-title">Emilia & Kristian</h1>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="program.html">Program</a></li>
-        <li><a href="rsvp.html">RSVP</a></li>
-        <li><a href="gifts.html">Gift List</a></li>
-        <li><a href="photos.html">Photo Gallery</a></li>
-        <li><a href="travel.html">Travel &amp; Stay</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- RSVP Form HTML -->
+<form id="rsvp-form" class="rsvp-form">
+  <!-- Guest Name with autocomplete suggestions -->
+  <label for="guestName">Guest Name:</label>
+  <input type="text" id="guestName" name="guestName" list="guestList" placeholder="Start typing your name..." required />
 
-  <main>
-    <section class="rsvp-section">
-      <div class="header-info">
-        <p>1 event</p>
-        <h2>WEDDING</h2>
-        <p>Saturday, June 13, 2026<br/>Grytebakke gård, Norway</p>
-      </div>
+  <datalist id="guestList"></datalist>  <!-- dynamically populated by JS -->
 
-      <form id="rsvp-form">
-        <label for="search-name">Enter your name:</label>
-        <input type="text" id="search-name" name="search-name" placeholder="Start typing your name..." required />
+  <!-- Attendance dropdown -->
+  <label for="attendance">Will you attend?</label>
+  <select id="attendance" name="attendance" required>
+    <option value="">-- Select an option --</option>
+    <option value="Yes">Yes, I will attend</option>
+    <option value="No">No, I cannot attend</option>
+  </select>
 
-        <div id="guest-info" style="display: none">
-          <div class="guest-entry">
-            <label>Guest Name</label>
-            <input type="text" name="guest1-name" readonly />
-            <div class="attendance-options">
-              <label><input type="radio" name="guest1-attend" value="Yes"> Will Attend</label>
-              <label><input type="radio" name="guest1-attend" value="No"> Will Not Attend</label>
-            </div>
-            <label>Meal Preference</label>
-            <select name="guest1-meal">
-              <option value="">Select Meal Option...</option>
-              <option value="Vegetarian">Vegetarian</option>
-              <option value="Non-Vegetarian">Non-Vegetarian</option>
-              <option value="Vegan">Vegan</option>
-            </select>
-          </div>
+  <!-- Meal preference (for primary guest) -->
+  <label for="meal">Meal Preference:</label>
+  <select id="meal" name="meal" required>
+    <option value="">-- Select a meal preference --</option>
+    <option value="Non-Vegetarian">Non-Vegetarian</option>
+    <option value="Vegetarian">Vegetarian</option>
+    <option value="Vegan">Vegan</option>
+  </select>
 
-          <!-- Plus one (optional) -->
-          <div class="guest-entry">
-            <label>Plus One Name (optional)</label>
-            <input type="text" name="guest2-name" />
-            <div class="attendance-options">
-              <label><input type="radio" name="guest2-attend" value="Yes"> Will Attend</label>
-              <label><input type="radio" name="guest2-attend" value="No"> Will Not Attend</label>
-            </div>
-            <label>Meal Preference</label>
-            <select name="guest2-meal">
-              <option value="">Select Meal Option...</option>
-              <option value="Vegetarian">Vegetarian</option>
-              <option value="Non-Vegetarian">Non-Vegetarian</option>
-              <option value="Vegan">Vegan</option>
-            </select>
-          </div>
+  <!-- Plus One section (initially hidden until needed) -->
+  <fieldset id="plusOneSection">
+    <legend>Plus One (Guest) Details <em>(if applicable)</em></legend>
 
-          <div style="margin-top: 20px;">
-            <label>Are there any dietary restrictions that we should know of? (Optional)</label>
-            <textarea name="restrictions" rows="3" maxlength="800"></textarea>
-          </div>
+    <label for="plusOneName">Plus One Name:</label>
+    <input type="text" id="plusOneName" name="plusOneName" placeholder="Your guest's name (optional)" />
 
-          <button type="submit" class="submit-btn">Submit</button>
-        </div>
-      </form>
-    </section>
-  </main>
+    <div id="plusOneExtra" style="display:none; margin-left: 1em;">
+      <label for="plusOneAttendance">Will your guest attend?</label>
+      <select id="plusOneAttendance" name="plusOneAttendance">
+        <option value="">-- Select an option --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
 
-  <footer class="site-footer">
-    <p>&copy; 2025 Emilia &amp; Kristian</p>
-  </footer>
+      <label for="plusOneMeal">Guest Meal Preference:</label>
+      <select id="plusOneMeal" name="plusOneMeal">
+        <option value="">-- Select a meal preference --</option>
+        <option value="Non-Vegetarian">Non-Vegetarian</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+      </select>
+    </div>
+  </fieldset>
 
-  <script>
-    const guestList = ["Sonja O'Brien", "Kristoffer Elstad Hansen"];
+  <!-- Dietary restrictions and song request -->
+  <label for="dietaryRestrictions">Dietary Restrictions (allergies, etc.):</label>
+  <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="2" placeholder="Let us know of any dietary needs"></textarea>
 
-    document.getElementById("search-name").addEventListener("input", function () {
-      const input = this.value.trim().toLowerCase();
-      const matchedName = guestList.find(name => name.toLowerCase().startsWith(input));
+  <label for="songRequest">Song Request (for the dance floor):</label>
+  <input type="text" id="songRequest" name="songRequest" placeholder="Suggest a song!" />
 
-      if (matchedName) {
-        document.querySelector("input[name='guest1-name']").value = matchedName;
-        document.getElementById("guest-info").style.display = "block";
-      } else {
-        document.getElementById("guest-info").style.display = "none";
-      }
+  <!-- Submit button -->
+  <button type="submit">Send RSVP</button>
+
+  <!-- Placeholder for success/error messages -->
+  <p id="responseMsg" style="font-weight: bold; margin-top: 1em;"></p>
+</form>
+
+<script>
+// === Configuration ===
+const scriptURL = "https://script.google.com/macros/s/AKfycbwS5MsSUIuJ1L9iEOHjeeDyWnbAHySeNp7kvFL0Oa747r-0JM24f-GVFkgC3WQFmOgl/exec";  // TODO: replace with deployed Apps Script URL
+
+// Fetch guest list from Google Sheet on page load and populate the datalist
+fetch(scriptURL + "?guestlist=true")
+  .then(response => response.json())
+  .then(names => {
+    const dataList = document.getElementById('guestList');
+    dataList.innerHTML = "";  // clear any existing options
+    names.forEach(name => {
+      const opt = document.createElement('option');
+      opt.value = name;
+      dataList.appendChild(opt);
     });
-  </script>
-</body>
-</html>
+  })
+  .catch(err => console.error("Error loading guest list:", err));
+
+// Handle dynamic display of plus-one fields
+const attendanceSelect = document.getElementById('attendance');
+const plusOneSection = document.getElementById('plusOneSection');
+const plusOneNameInput = document.getElementById('plusOneName');
+const plusOneExtraDiv = document.getElementById('plusOneExtra');
+attendanceSelect.addEventListener('change', () => {
+  if (attendanceSelect.value === "Yes") {
+    plusOneSection.style.display = "block";   // show plus-one section if attending
+    document.getElementById('meal').disabled = false;
+  } else {
+    // If not attending, hide plus-one section and disable meal choice
+    plusOneSection.style.display = "none";
+    document.getElementById('meal').disabled = true;
+    // Also clear any plus-one inputs
+    plusOneNameInput.value = "";
+    plusOneExtraDiv.style.display = "none";
+  }
+});
+plusOneNameInput.addEventListener('input', () => {
+  // If a plus-one name is entered, show their attendance/meal fields
+  if (plusOneNameInput.value.trim() !== "") {
+    plusOneExtraDiv.style.display = "block";
+    // Mark plus-one subfields as required when visible
+    document.getElementById('plusOneAttendance').required = true;
+    document.getElementById('plusOneMeal').required = true;
+  } else {
+    // Hide plus-one subfields if name is cleared
+    plusOneExtraDiv.style.display = "none";
+    document.getElementById('plusOneAttendance').required = false;
+    document.getElementById('plusOneMeal').required = false;
+    document.getElementById('plusOneAttendance').value = "";
+    document.getElementById('plusOneMeal').value = "";
+  }
+});
+
+// Handle form submission via AJAX (prevent default form submit)
+const form = document.getElementById('rsvp-form');
+const responseMsg = document.getElementById('responseMsg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  responseMsg.textContent = "";  // clear previous message
+
+  // Prepare form data for submission
+  const formData = new FormData(form);
+
+  // Optionally, you could add client-side validation here (beyond HTML5) 
+  // e.g., ensure meal preferences are selected if attending, etc.
+
+  // Submit the form data to Google Apps Script using fetch
+  fetch(scriptURL, { method: 'POST', body: formData })  // Using FormData avoids CORS preflight:contentReference[oaicite:3]{index=3}
+    .then(response => response.json())
+    .then(data => {
+      if (data.result === "success") {
+        // Show success message and optionally reset the form
+        responseMsg.style.color = "green";
+        responseMsg.textContent = "Thank you! Your RSVP has been recorded.";
+        form.reset();
+        plusOneExtraDiv.style.display = "none";  // hide plus-one extra fields after reset
+      } else {
+        // Show error message returned by server
+        responseMsg.style.color = "red";
+        responseMsg.textContent = "Error: " + (data.message || "Could not submit RSVP.");
+      }
+    })
+    .catch(error => {
+      console.error("Submission error:", error);
+      responseMsg.style.color = "red";
+      responseMsg.textContent = "Error submitting form. Please try again.";
+    });
+});
+</script>
