@@ -46,12 +46,41 @@
       text-align: center;
       margin-bottom: 30px;
     }
+
+    /* Responsive navigation toggle */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5em;
+      background: none;
+      border: none;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #88a07a;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+      .navbar ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="site-header">
     <h1 class="site-title">Emilia & Kristian</h1>
     <nav class="navbar">
+      <button class="menu-toggle" onclick="document.querySelector('.navbar ul').classList.toggle('active')">☰</button>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="program.html">Program</a></li>
@@ -130,7 +159,7 @@
   </footer>
 
   <script>
-    const scriptURL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwS5MsSUIuJ1L9iEOHjeeDyWnbAHySeNp7kvFL0Oa747r-0JM24f-GVFkgC3WQFmOgl/exec";
 
     // Load guest list from Google Sheets via GET
     fetch(scriptURL + "?guestlist=true")
