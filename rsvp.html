@@ -176,8 +176,16 @@
 
     document.getElementById("guestName").addEventListener("input", function () {
       const input = this.value.trim();
-      const matched = Array.from(document.getElementById('guestList').options)
-        .some(option => option.value === input);
+      const guestList = Array.from(document.getElementById('guestList').options);
+      const match = guestList.find(option => option.value.toLowerCase() === input.toLowerCase());
+
+      if (match) {
+        document.querySelector("input[name='confirmedGuest']").value = match.value;
+        guestInfo.style.display = "block";
+      } else {
+        guestInfo.style.display = "none";
+      }
+
       const guestInfo = document.getElementById("guest-info");
 
       if (matched) {
