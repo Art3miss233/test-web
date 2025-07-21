@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 /* ========== Base Layout ========== */
 html, body {
   margin: 0;
@@ -17,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: Georgia, sans-serif;
-  background-color: #f5f5ef;
+  background-color: #dce8d5;
   color: #333;
 }
 
@@ -100,22 +102,106 @@ main {
   display: block;
   margin: 40px auto 0;
   width: 80%;
-  max-width: 600px;
+  max-width: 1000px;
   height: auto;
   padding-bottom: 0;
 }
 
 /* ========== Program Page ========== */
-.schedule {
-  list-style: none;
-  padding: 0 20px;
+/* Program Page Layout */
+.program-page {
+  background-color: #dce8d5; /* soft mint/greenish background */
+  padding: 40px 20px;
+}
+.welcome-section {
+  text-align: center;
+  padding: 40px 20px 0;
+  background-color: #dce8d5;
+  flex: 1;
+}
+.schedule-title {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 3em;
+  color: #4a6c5c;
+  margin-bottom: 40px;
 }
 
-.schedule li {
-  margin: 10px 0;
+.schedule-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-/* ========== Gift List Page ========== */
+.schedule-image img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.schedule-list {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  border-bottom: 1px solid #c9d7ce;
+  padding-bottom: 20px;
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.time {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1em;
+  color: #7d8b7a;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.details h3 {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.1em;
+  margin: 0;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.details p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9em;
+  margin-top: 5px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .schedule-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+  }
+
+  .time {
+    width: auto;
+    margin-bottom: 5px;
+  }
+}
+
+/* ========== Registry Page ========== */
 .gift-list {
   list-style: none;
   padding: 0 20px;
@@ -187,8 +273,7 @@ main {
 
 /* ========== FAQ Section ========== */
 .faq-section {
-  background-color: #3e724d;
-  color: white;
+  color: rgb(35, 48, 42);
   padding: 60px 20px;
   text-align: center;
 }
@@ -202,8 +287,8 @@ main {
 }
 
 .faq-header h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
+  font-family: 'Lobster', cursive;
+  font-size: 4rem;
 }
 
 .faq-decor {
@@ -403,6 +488,11 @@ main {
   }
 
   .flower-image {
+    width: 90%;
+    max-width: 300px;
+    padding: 0;
+  }
+  .schedule-image img {
     width: 90%;
     max-width: 300px;
     padding: 0;
