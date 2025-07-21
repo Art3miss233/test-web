@@ -86,13 +86,6 @@ main {
   padding-bottom: 0;
 }
 
-@media (max-width: 600px) {
-  .flower-image {
-    width: 90%;
-    max-width: 300px;
-    padding: 0;
-  }
-}
 
 
 /* Program Schedule */
@@ -294,4 +287,12 @@ main {
 }
 .rsvp-form button:hover {
   background-color: #751f1f;
+}
+
+@media (max-width: 600px) {
+  .flower-image {
+    width: 90%;
+    max-width: 300px;
+    padding: 0;
+  }
 }
